@@ -1,15 +1,15 @@
 # Michelle Scheuer
 # 417 Semester Project
 # 11/12/2021
-import sys
+
 
 time_list = []
-c1 = []
+c1_value = []
 products = []
-c0 = []
+c0_value = []
 formatted = []
-begin = []
-end = []
+start_time = []
+end_time = []
 y_count = []
 
 
@@ -23,30 +23,30 @@ class Calculate:
         count = 0
         for i in range(0, total_time_req, 30):
             time1 = i + 30
-            begin.append(i)
-            end.append(time1)
+            start_time.append(i)
+            end_time.append(time1)
             count += 1
             y_count.append(count)
 
-    def calculate_c1(self, output):
-        for i in output:
+    def calculate_c1(self, formatted_output):
+        for i in formatted_output:
             time1 = i / 30
             c1x = (round(time1, 4))
-            c1.append(c1x)
+            c1_value.append(c1x)
 
-    def calculate_c0(self, formatted_results):
-        for C1, y0 in zip(c1, time_list):
-            products.append(round((C1 * y0),1))
+    def calculate_c0(self, col_results):
+        for C1, y0 in zip(c1_value, time_list):
+            products.append(round((C1 * y0), 1))
 
-        for C0, prod in zip(formatted_results, products):
-            c0.append(C0 - prod)
+        for C0, prod in zip(col_results, products):
+            c0_value.append(C0 - prod)
 
-    def clear(self):
+    def clear_lists(self):
         time_list.clear()
-        c1.clear()
+        c1_value.clear()
         products.clear()
-        c0.clear()
+        c0_value.clear()
         formatted.clear()
-        begin.clear()
-        end.clear()
+        start_time.clear()
+        end_time.clear()
         y_count.clear()
