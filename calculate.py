@@ -1,5 +1,4 @@
 # Michelle Scheuer
-# 417 Semester Project
 # 11/12/2021
 
 
